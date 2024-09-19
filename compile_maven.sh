@@ -1,3 +1,7 @@
 # Linux
-mvn clean install
-mvn exec:java@helloworld
+
+# build
+mvn clean install 
+
+# run
+mvn exec:java@helloworld 

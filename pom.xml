@@ -29,13 +29,25 @@
                     <!-- Execution for the first main class -->
                     <!-- Describes where your application begins -->
                     <execution>
-                        <id>helloworld</id>
+                        <id>helloworld</id> <!-- This is the id you use to identify this application when you use mvn exec-->
                         <goals>
                             <goal>java</goal>
                         </goals>
                         <configuration>
 							<!-- Name of the class you want to run-->
                             <mainClass>lab1.HelloWorld</mainClass> 
+                        </configuration>
+                    </execution>
+                    <!-- Execution for the Second main class -->
+                    <!-- Describes where your application begins -->
+                    <execution>
+                        <id>inverted-triangle</id>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+							<!-- Name of the class you want to run-->
+                            <mainClass>lab1.InvertedTriangle</mainClass> 
                         </configuration>
                     </execution>
 				</executions>
