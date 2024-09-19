@@ -1,7 +1,10 @@
 REM Windows
 
 REM build
-mvn clean install 
+start mvn clean install 
+@REM the install commands aborts the cmd process so we need to run in a different process
 
-REM run
+timeout 5
+
+@REM run
 mvn exec:java@inverted-triangle
