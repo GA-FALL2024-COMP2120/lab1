@@ -1,10 +1,8 @@
 REM Windows
 
 REM build
-start mvn clean install 
-@REM the install commands aborts the cmd process so we need to run in a different process
-
-timeout 5
+cmd /c mvn clean install 
+@REM the install commands aborts the cmd process so we need to run using /c
 
 REM run
 mvn exec:java@helloworld 
