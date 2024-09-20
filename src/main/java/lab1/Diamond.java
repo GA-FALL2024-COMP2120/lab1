@@ -50,6 +50,7 @@ public class Diamond {
             }
 
         } while (length % 2 != 1 || length < 1 || length > 19); // if not odd or out of bounds keep looping
+        scan.close();
         return length;
     }
 
@@ -73,18 +74,18 @@ public class Diamond {
 
         // these if statements reduce this problem to solving just the top left quadrant
         // the -1 is because the length parameter is not 0 indexed think of it like a unit conversion
-        if(row < middle){   // upper half
+        if(row < middle) {   // upper half
             if(col < middle){   // left side
                 //  do nothing for top left quadrant
             }else{
-                col = length - col - 1; // flip about the middle row for bottom left quadrant
+                col = (length -1) - col; // flip about the middle row for bottom left quadrant
             }   
-        }else{
+        } else {
             if(col < middle){   // left side
-                row = length - row - 1; // flip about the middle column for top right quadrant
+                row = (length -1) - row; // flip about the middle column for top right quadrant
             }else{
-                row = length - row - 1; // flip about the middle column for bottom right quadrant
-                col = length - col - 1; // flip about the middle row for bottom right quadrant
+                row = (length -1) - row; // flip about the middle column for bottom right quadrant
+                col = (length -1) - col; // flip about the middle row for bottom right quadrant
             }   
         }
 
