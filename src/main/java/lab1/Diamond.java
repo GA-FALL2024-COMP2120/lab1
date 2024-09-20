@@ -67,8 +67,27 @@ public class Diamond {
         }
     }
 
-    //TODO: figure out this logic
+    // this function assumes length is odd and row and col are positive and less than length
     public static boolean shouldPrintSpace(int row, int col, int length) {
-        return false;
+        int middle = length / 2;  // assumes length is odd (this is integer division)
+
+        // these if statements reduce this problem to solving just the top left quadrant
+        // the -1 is because the length parameter is not 0 indexed think of it like a unit conversion
+        if(row < middle){   // upper half
+            if(col < middle){   // left side
+                //  do nothing for top left quadrant
+            }else{
+                col = length - col - 1; // flip about the middle row for bottom left quadrant
+            }   
+        }else{
+            if(col < middle){   // left side
+                row = length - row - 1; // flip about the middle column for top right quadrant
+            }else{
+                row = length - row - 1; // flip about the middle column for bottom right quadrant
+                col = length - col - 1; // flip about the middle row for bottom right quadrant
+            }   
+        }
+
+        return col + row < middle;  // return true if the row + col is less than middle
     }
 }
