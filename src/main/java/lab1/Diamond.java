@@ -7,6 +7,7 @@ import java.util.Scanner;
  */
 public class Diamond {
 
+    // This is where the program begins
     public static void main(String[] args) {
         int length = getLength();
         printDiamond(length);
