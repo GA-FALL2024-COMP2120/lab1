@@ -3,9 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- This is the some meta data for the project-->
     <groupId>COMP2120</groupId>
     <artifactId>lab1</artifactId>
-    <version>0.0.0</version>
+    <version>0.0.1</version>
 
     <build>
         <plugins>
@@ -34,23 +35,23 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-							<!-- Name of the class you want to run-->
+                            <!-- Name of the class you want to run-->
                             <mainClass>lab1.HelloWorld</mainClass> 
                         </configuration>
                     </execution>
                     <!-- Execution for the Second main class -->
                     <!-- Describes where your application begins -->
                     <execution>
-                        <id>inverted-triangle</id>
+                        <id>diamond</id> <!-- This is the id you use to identify this application when you use mvn exec-->
                         <goals>
                             <goal>java</goal>
                         </goals>
                         <configuration>
-							<!-- Name of the class you want to run-->
-                            <mainClass>lab1.InvertedTriangle</mainClass> 
+                            <!-- Name of the class you want to run-->
+                            <mainClass>lab1.Diamond</mainClass> 
                         </configuration>
                     </execution>
-				</executions>
+                </executions>
             </plugin>
         </plugins>
     </build>
