@@ -8,10 +8,13 @@ However, in industry a build tools are the common place. Learning one will make 
 
 In this repo I have provided a a good template on how to structure a maven project, and also demo how to build and run a java program the bare-bones way.
 
-**IMPORTANT**
-"diamond.cmd" (.sh respectively) will only run the compiled class the was generated using 
 
 ## Task 2
+
+**IMPORTANT**
+"diamond.cmd" (.sh respectively) will only run the compiled class the was generated using "compile-maven.cmd"
+
+**So use "compile-maven.cmd" to compile and use "diamond.cmd" to run your code**
 
 We are to make an application that prints a diamond given an odd number as input.
 
