@@ -3,7 +3,7 @@ package lab1;
 import java.util.Scanner;
 
 /**
- * Inverted Triangle!
+ * Diamond!
  */
 public class Diamond {
 
