@@ -48,6 +48,7 @@ public class Diamond {
                 wrongType = true;
                 scan.nextLine(); // this will discrad the bad input since nextInt() did not read it
             }
+            System.out.println();
 
         } while (length % 2 != 1 || length < 1 || length > 19); // if not odd or out of bounds keep looping
         scan.close();
