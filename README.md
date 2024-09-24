@@ -50,7 +50,7 @@ for (int i = 0; i < length; i++){	// row loop (this loop is responsible for prin
 }
 ```
 
-Here is the full solution
+# Here is the full solution
 
 ```java
 // this function assumes length is odd and row and col are positive and less than length
@@ -59,18 +59,19 @@ public static boolean shouldPrintSpace(int row, int col, int length) {
 
 	// these if statements reduce this problem to solving just the top left quadrant
 	// the -1 is because the length parameter is not 0 indexed think of it like a unit conversion
+
 	if(row < middle) {   // upper half
 		if(col < middle){   // left side
 			//  do nothing for top left quadrant
-		}else{
-			col = (length -1) - col; // flip about the middle row for bottom left quadrant
+		}else{	//right side
+			col = (length -1) - col; // flip about the middle column for top right quadrant
 		}   
-	} else {
+	} else { // bottom half
 		if(col < middle){   // left side
-			row = (length -1) - row; // flip about the middle column for top right quadrant
-		}else{
-			row = (length -1) - row; // flip about the middle column for bottom right quadrant
-			col = (length -1) - col; // flip about the middle row for bottom right quadrant
+			row = (length -1) - row; 	// flip about the middle column for bottom left quadrant
+		}else{	// right side
+			row = (length -1) - row;	// flip about the middle row for bottom right quadrant
+			col = (length -1) - col;  	// flip about the middle column for bottom right quadrant
 		}   
 	}
 
