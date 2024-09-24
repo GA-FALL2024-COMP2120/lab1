@@ -54,6 +54,7 @@ for (int i = 0; i < length; i++){	// row loop (this loop is responsible for prin
 
 ```java
 // this function assumes length is odd and row and col are positive and less than length
+// returns true if a blank space should be printed
 public static boolean shouldPrintSpace(int row, int col, int length) {
 	int middle = length / 2;  // assumes length is odd (this is integer division)
 
