@@ -52,6 +52,8 @@ for (int i = 0; i < length; i++){	// row loop (this loop is responsible for prin
 
 # Here is the full solution
 
+This function returns the value of SOME_CONDITION, see Diamond.java for full application
+
 ```java
 // this function assumes length is odd and row and col are positive and less than length
 // returns true if a blank space should be printed
