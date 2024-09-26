@@ -14,14 +14,14 @@ public class Diamond {
     }
 
     public static int getLength() {
-        Scanner scan = new Scanner(System.in);  // Scanner object will read from the System.in (the keyboard)
+        Scanner scan = new Scanner(System.in); // Scanner object will read from the System.in (the keyboard)
 
         int length = 0; // must be odd
 
         boolean first = true;
         boolean wrongType = false;
         do {
-            if (!first) {   // do not check for errors the first iteration
+            if (!first) { // do not check for errors the first iteration
                 System.out.print("Error! ");
                 if (wrongType) {
                     System.out.print("Input was not an integer!");
@@ -42,33 +42,58 @@ public class Diamond {
             first = false;
 
             try {
-                length = scan.nextInt();    // read an integer from the scanner
+                length = scan.nextInt(); // read an integer from the scanner
             } catch (Exception e) {
                 length = 0;
                 wrongType = true;
-                scan.nextLine();    // this will discrad the bad input since nextInt() did not read it
+                scan.nextLine(); // this will discrad the bad input since nextInt() did not read it
             }
+            System.out.println();
 
         } while (length % 2 != 1 || length < 1 || length > 19); // if not odd or out of bounds keep looping
+        scan.close();
         return length;
     }
 
     // this function assume that length is odd
     public static void printDiamond(int length) {
-        for (int i = 0; i < length; i++) {	// row loop (this loop is responsible for printing a row each iteration)
-            for (int j = 0; j < length; j++) {	// print loop (this loop is responsible for printing a character each iteration)
-                if (shouldPrintSpace(i, j, length)) {	// shouldPrintSpace() is true when we should print a space
+        for (int i = 0; i < length; i++) { // row loop (this loop is responsible for printing a row each iteration)
+            for (int j = 0; j < length; j++) { // print loop (this loop is responsible for printing a character each
+                                               // iteration)
+                if (shouldPrintSpace(i, j, length)) { // shouldPrintSpace() is true when we should print a space
                     System.out.print(" ");
                 } else {
                     System.out.print("*");
                 }
             }
-            System.out.print("\n");	//print new line
+            System.out.print("\n"); // print new line
         }
     }
 
-    //TODO: figure out this logic
+    // this function assumes length is odd and row and col are positive and less
+    // than length
     public static boolean shouldPrintSpace(int row, int col, int length) {
-        return false;
+        int middle = length / 2; // assumes length is odd (this is integer division)
+
+        // these if statements reduce this problem to solving just the top left quadrant
+        // the -1 is because the length parameter is not 0 indexed think of it like a
+        // unit conversion
+
+        if (row < middle) { // upper half
+            if (col < middle) { // left side
+                // do nothing for top left quadrant
+            } else { // right side
+                col = (length - 1) - col; // flip about the middle column for top right quadrant
+            }
+        } else { // bottom half
+            if (col < middle) { // left side
+                row = (length - 1) - row; // flip about the middle column for bottom left quadrant
+            } else { // right side
+                row = (length - 1) - row; // flip about the middle row for bottom right quadrant
+                col = (length - 1) - col; // flip about the middle column for bottom right quadrant
+            }
+        }
+
+        return col + row < middle; // return true if the row + col is less than middle
     }
 }
