@@ -24,7 +24,7 @@ What we discussed in the lab that this assignment is very similar to printing a 
 
 All printing a Diamond is in practice is printing a squre made up of `spaces` and `*` characters.
 
-To print a square we would do is the following
+To print a square we would do the following
 
 ```java
 for (int i = 0; i < length; i++){	// row loop (this loop is responsible for printing a row each iteration)
@@ -35,7 +35,7 @@ for (int i = 0; i < length; i++){	// row loop (this loop is responsible for prin
 }
 ```
 
-so then it is resonable that to print a diamond all we need to do is the following
+so then it is reasonable that to print a diamond all we need to do is the following
 
 ```java
 for (int i = 0; i < length; i++){	// row loop (this loop is responsible for printing a row each iteration)
